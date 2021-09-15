@@ -17,3 +17,13 @@
     console.log(decrypted);
 </script>
 ```
+
+Using node.js
+
+- Install https://www.npmjs.com/package/crypto-js
+- https://www.npmjs.com/package/http-server (static HTTP server)
+- `npm i crypto-js`
+- https://www.npmjs.com/package/http-server
+- Generate SSL by `openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem`, cretae a `cert.pem`
+- Lanch by `http-server` OR for SSL `http-server -S -C cert.pem`
+- Set `webpack` in dev mode by editing `webpack.config.js` section `mode: "development"`
