@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/fadilxcoder/cryoto-js#readme",
   "dependencies": {
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "dotenv-webpack": "^7.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
