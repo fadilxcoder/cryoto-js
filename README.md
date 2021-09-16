@@ -29,4 +29,7 @@ Using node.js
 - Set `webpack` in dev mode by editing `webpack.config.js` section `mode: "development"`
 - Use configs in `.env` directly in webpack
 - https://www.npmjs.com/package/dotenv-webpack (dotenv-webpack)
-- Install ` npm i dotenv-webpack`
+- Install `npm i dotenv-webpack`
+- Call API with bearer
+- https://www.npmjs.com/package/axios
+- Install `npm i axios`
