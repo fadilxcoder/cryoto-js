@@ -2,6 +2,8 @@ import CryptoJS from "crypto-js";
 const axios = require('axios');
 // var CryptoJS = require("crypto-js");
 
+/*
+
 // Same object in PHP
 const DataDecrypt = {
     name: process.env.API_USER_NAME,
@@ -23,14 +25,25 @@ var jsEncr = CryptoJS.AES.encrypt(JSON.stringify(DataDecrypt), DataKey, { iv: Da
 var bytes  = CryptoJS.AES.decrypt(DataEncrypt, DataKey, { iv: DataVector });
 var phpDecr = bytes.toString(CryptoJS.enc.Utf8);
 
-// console.log(phpDecr);
-// console.log(jsEncr);
+console.log(phpDecr);
+console.log(jsEncr);
+
+*/
+
+const authentication = {
+    name: process.env.API_USER_NAME,
+    email: process.env.API_USER_EMAIL, 
+    idx: process.env.API_USER_IDX
+};
+const DataKey = CryptoJS.enc.Utf8.parse(process.env.EKEY);
+const DataVector = CryptoJS.enc.Utf8.parse(process.env.IVKEY);
+const key = CryptoJS.AES.encrypt(JSON.stringify(authentication), DataKey, { iv: DataVector }).toString();
 
 const instance = axios.create({
-    baseURL: 'http://dev.api.hfx.local/v1',
-    timeout: 10000,
+    baseURL:  process.env.API_URI + process.env.API_VERSION,
+    timeout:  process.env.API_TIMEOUT,
     headers: {
-        'Authorization': 'Bearer ' + jsEncr
+        'Authorization': process.env.API_TOKEN_AUTHENTICATION.replace('<token>', key)
     }
 });
 
