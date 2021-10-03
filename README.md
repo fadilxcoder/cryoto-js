@@ -39,3 +39,4 @@ Launc prod
 
 - `ngrok start dev.api.hfx`
 - Then update *API_URI* in `.env` to `https://xxx-xxx-xxxx-xxx-xxx.ngrok.io/`
+- RUN : `cd conf.d/ && ./deploy.sh && cd ..`
