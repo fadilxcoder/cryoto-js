@@ -40,14 +40,19 @@ const DataVector = CryptoJS.enc.Utf8.parse(process.env.IVKEY);
 const key = CryptoJS.AES.encrypt(JSON.stringify(authentication), DataKey, { iv: DataVector }).toString();
 
 const instance = axios.create({
-    baseURL:  process.env.API_URI + process.env.API_VERSION,
+    baseURL:  process.env.API_URI,
     timeout:  process.env.API_TIMEOUT,
     headers: {
-        'Authorization': process.env.API_TOKEN_AUTHENTICATION.replace('<token>', key)
+        'Authorization': process.env.API_TOKEN_AUTHENTICATION.replace('<token>', key),
+        'Version': process.env.API_VERSION
     }
 });
 
-instance.get('/users', {})
+instance.get('/', {
+    headers: {
+        'Endpoint': '/users/'
+    }
+})
 .then(function (response) {
     // console.log(response.data);
     const elemt = document.getElementById('ulist');
