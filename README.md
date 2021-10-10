@@ -33,9 +33,9 @@ Using node.js
 - Call API with bearer
 - https://www.npmjs.com/package/axios
 - Install `npm i axios`
+- https://github.com/axios/axios (Github repo)
 
-
-Launc prod
+Launch prod with git auto deployment(Optional)
 
 - `ngrok start dev.api.hfx`
 - Then update *API_URI* in `.env` to `https://xxx-xxx-xxxx-xxx-xxx.ngrok.io/`

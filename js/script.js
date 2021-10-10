@@ -40,6 +40,7 @@ const DataVector = CryptoJS.enc.Utf8.parse(process.env.IVKEY);
 const key = CryptoJS.AES.encrypt(JSON.stringify(authentication), DataKey, { iv: DataVector }).toString();
 
 const instance = axios.create({
+    // baseURL:  process.env.API_URI + process.env.API_VERSION,
     baseURL:  process.env.API_URI,
     timeout:  process.env.API_TIMEOUT,
     headers: {
@@ -50,7 +51,7 @@ const instance = axios.create({
 
 instance.get('/', {
     headers: {
-        'Endpoint': '/users/'
+        'Endpoint': '/users/',
     }
 })
 .then(function (response) {
