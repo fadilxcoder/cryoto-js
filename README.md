@@ -38,5 +38,8 @@ Using node.js
 Launch prod with git auto deployment(Optional)
 
 - `ngrok start dev.api.hfx`
-- Then update *API_URI* in `.env` to `https://xxx-xxx-xxxx-xxx-xxx.ngrok.io/`
+- Then update *API_SERVER* in `.env` for project **'reverse-proxy'** to `https://xxx-xxx-xxxx-xxx-xxx.ngrok.io/` and deploy to heroku
+- App configs in `.env` :
+- - `# API_URI="http://reverse.proxy.local/"`
+- - `API_URI="https://gfx-reverse-proxy.herokuapp.com/"`
 - RUN : `cd conf.d/ && ./deploy.sh && cd ..`
