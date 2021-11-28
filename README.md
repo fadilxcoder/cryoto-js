@@ -35,11 +35,16 @@ Using node.js
 - Install `npm i axios`
 - https://github.com/axios/axios (Github repo)
 
-Launch prod with git auto deployment(Optional)
+### Launch prod with git auto deployment(Optional)
 
-- `ngrok start dev.api.hfx`
-- Then update *API_SERVER* in `.env` for project **'reverse-proxy'** to `https://xxx-xxx-xxxx-xxx-xxx.ngrok.io/` and deploy to heroku
+- Launch CLI `ngrok start dev.api.hfx`
+- Then update *API_SERVER* in `.env` for project **'reverse-proxy'** to `https://xxx-xxx-xxxx-xxx-xxx.ngrok.io/`
+- Deploy on heroku
+
+### Details
+
 - App configs in `.env` :
 - - `# API_URI="http://reverse.proxy.local/"`
 - - `API_URI="https://gfx-reverse-proxy.herokuapp.com/"`
-- RUN : `cd conf.d/ && ./deploy.sh && cd ..`
+- RUN : `cd conf.d/ && ./deploy.sh && cd ..` - **RUN ONLY WHEN `API_URI` CHANGES IN `.env` (automated deployment on netlify)**
+- APP URL : https://sharp-sinoussi-2de763.netlify.app/
